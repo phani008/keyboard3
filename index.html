@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>PHANIS KEYBOARD</title> 
+    <link rel="stylesheet" href="index.css">  
+    <audio id="audio" src="ringtone1.mp3"></audio>
+    <img src="phani.png" alt="phani's keyboard" width="300" height="300">
+    <div>PHANI'S KEYBOARD</div>
+
+ 
+</head>
+<body>
+    <audio id="audioQ" src="ringtone1.mp3"></audio>
+    <audio id="audioW" src="ringtone2.mp3"></audio>
+    <audio id="audioE" src="ringtone3.mp3"></audio>
+    <audio id="audioR" src="ringtone4.mp3"></audio>
+    <audio id="audioT" src="ringtone5.mp3"></audio>
+    <audio id="audioY" src="ringtone6.mp3"></audio>
+    <audio id="audioU" src="ringtone7.mp3"></audio>
+    <audio id="audioI" src="ringtone8.mp3"></audio>
+    <audio id="audioO" src="ringtone9.mp3"></audio>
+    <audio id="audioP" src="ringtone10.mp3"></audio>
+    <audio id="audioA" src="ringtone11.mp3"></audio>
+    <audio id="audioS" src="ringtone12.mp3"></audio>
+    <audio id="audioD" src="ringtone13.mp3"></audio>
+    <audio id="audioF" src="ringtone14.mp3"></audio>
+    <audio id="audioG" src="ringtone15.mp3"></audio>
+    <audio id="audioH" src="ringtone16.mp3"></audio>
+    <audio id="audioJ" src="ringtone17.mp3"></audio>
+    <audio id="audioK" src="ringtone18.mp3"></audio>
+    <audio id="audioL" src="ringtone19.mp3"></audio>
+    <audio id="audio;" src="ringtone20.mp3"></audio>
+    <audio id="audioZ" src="ringtone13.mp3"></audio>
+    <audio id="audioX" src="ringtone14.mp3"></audio>
+    <audio id="audioC" src="ringtone15.mp3"></audio>
+    <audio id="audioV" src="ringtone16.mp3"></audio>
+    <audio id="audioB" src="ringtone17.mp3"></audio>
+    <audio id="audioN" src="ringtone18.mp3"></audio>
+    <audio id="audioM" src="ringtone19.mp3"></audio>
+    <div class= "keyboard"id="keyboard">
+        <div class="row one">
+       <button><div class="key" data-key="Q">Q</div></button>
+       <button><div class="key" data-key="W">W</div></button>
+       <button><div class="key" data-key="E">E</div></button>
+       <button><div class="key" data-key="R">R</div></button>
+       <button><div class="key" data-key="T">T</div></button>
+        <button><div class="key" data-key="Y">Y</div></button>
+        <button><div class="key" data-key="U">U</div></button>
+        <button><div class="key" data-key="I">I</div></button>
+        <button><div class="key" data-key="O">O</div></button>
+         <button><div class="key" data-key="P">P</div></button>
+        </div>
+        <div class="row two">
+            <button><div class="key" data-key="A">A</div></button>
+            <button><div class="key" data-key="S">S</div></button>
+            <button><div class="key" data-key="D">D</div></button>
+            <button><div class="key" data-key="F">F</div></button>
+            <button><div class="key" data-key="G">G</div></button>
+             <button><div class="key" data-key="H">H</div></button>
+             <button><div class="key" data-key="J">J</div></button>
+             <button><div class="key" data-key="K">K</div></button>
+             <button><div class="key" data-key="L">L</div></button>
+              <button><div class="key" data-key=";">;</div></button>
+             </div>
+             <div class="row three">
+                <button><div class="key" data-key="Z">Z</div></button>
+                <button><div class="key" data-key="X">X</div></button>
+                <button><div class="key" data-key="C">C</div></button>
+                <button><div class="key" data-key="V">V</div></button>
+                <button><div class="key" data-key="B">B</div></button>
+                 <button><div class="key" data-key="N">N</div></button>
+                 <button><div class="key" data-key="M">M</div></button>
+                 <button><div class="key" data-key="SHFT">SHFT</div></button>
+                 <button><div class="key" data-key=".">.</div></button>
+                  <button><div class="key" data-key="/">/</div></button>
+                 </div>
+    </div>
+    <script>
+        const keyboard = document.getElementById("keyboard");
+        const keys = keyboard.querySelectorAll(".key");
+
+        document.addEventListener("keydown", (e) => {
+            const keyPressed = e.key.toUpperCase();
+            const audioElement = document.getElementById(`audio${keyPressed}`);
+
+            if (audioElement) {
+                keys.forEach((key) => {
+                    const keyData = key.getAttribute("data-key");
+                    if (keyData === keyPressed) {
+                        key.classList.add("highlighted");
+                        audioElement.currentTime = 0;
+                        audioElement.play();
+                    }
+                });
+            }
+        });
+
+        document.addEventListener('keyup', (e) => {
+            const keyPressed = e.key.toUpperCase();
+            const audioElement = document.getElementById(`audio${keyPressed}`);
+
+            if (audioElement) {
+                keys.forEach((key) => {
+                    const keyData = key.getAttribute('data-key');
+                    if (keyData === keyPressed) {
+                        key.classList.remove('highlighted');
+                    }
+                });
+            }
+        });
+    </script>
+    
+</body>
+</html>
