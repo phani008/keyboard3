@@ -1,15 +1,12 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>PHANIS KEYBOARD</title> 
-    <link rel="stylesheet" href="index.css">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHANIS KEYBOARD</title>
+    <link rel="stylesheet" href="index.css">
     <audio id="audio" src="ringtone1.mp3"></audio>
     <img src="phani.png" alt="phani's keyboard" width="300" height="300">
     <div>PHANI'S KEYBOARD</div>
-
- 
 </head>
 <body>
     <audio id="audioQ" src="ringtone1.mp3"></audio>
@@ -31,26 +28,27 @@
     <audio id="audioJ" src="ringtone17.mp3"></audio>
     <audio id="audioK" src="ringtone18.mp3"></audio>
     <audio id="audioL" src="ringtone19.mp3"></audio>
-    <audio id="audio;" src="ringtone20.mp3"></audio>
-    <audio id="audioZ" src="ringtone13.mp3"></audio>
-    <audio id="audioX" src="ringtone14.mp3"></audio>
-    <audio id="audioC" src="ringtone15.mp3"></audio>
-    <audio id="audioV" src="ringtone16.mp3"></audio>
-    <audio id="audioB" src="ringtone17.mp3"></audio>
-    <audio id="audioN" src="ringtone18.mp3"></audio>
-    <audio id="audioM" src="ringtone19.mp3"></audio>
-    <div class= "keyboard"id="keyboard">
+    <audio id="audioZ" src="ringtone20.mp3"></audio>
+     <audio id="audioX" src="ringtone13.mp3"></audio>
+     <audio id="audioC" src="ringtone4.mp3"></audio>
+     <audio id="audioV" src="ringtone5.mp3"></audio>
+     <audio id="audioB" src="ringtone6.mp3"></audio>
+     <audio id="audioN" src="ringtone7.mp3"></audio>
+     <audio id="audioM" src="ringtone9.mp3"></audio>
+    
+    <div class="keyboard" id="keyboard">
         <div class="row one">
-       <button><div class="key" data-key="Q">Q</div></button>
-       <button><div class="key" data-key="W">W</div></button>
-       <button><div class="key" data-key="E">E</div></button>
-       <button><div class="key" data-key="R">R</div></button>
-       <button><div class="key" data-key="T">T</div></button>
-        <button><div class="key" data-key="Y">Y</div></button>
-        <button><div class="key" data-key="U">U</div></button>
-        <button><div class="key" data-key="I">I</div></button>
-        <button><div class="key" data-key="O">O</div></button>
-         <button><div class="key" data-key="P">P</div></button>
+            <button><div class="key" data-key="Q">Q</div></button>
+            <button><div class="key" data-key="W">W</div></button>
+            <button><div class="key" data-key="E">E</div></button>
+            <button><div class="key" data-key="R">R</div></button>
+            <button><div class="key" data-key="T">T</div></button>
+            <button><div class="key" data-key="Y">Y</div></button>
+            <button><div class="key" data-key="U">U</div></button>
+            <button><div class="key" data-key="I">I</div></button>
+            <button><div class="key" data-key="O">O</div></button>
+            <button><div class="key" data-key="P">P</div></button>
+            
         </div>
         <div class="row two">
             <button><div class="key" data-key="A">A</div></button>
@@ -58,59 +56,103 @@
             <button><div class="key" data-key="D">D</div></button>
             <button><div class="key" data-key="F">F</div></button>
             <button><div class="key" data-key="G">G</div></button>
-             <button><div class="key" data-key="H">H</div></button>
-             <button><div class="key" data-key="J">J</div></button>
-             <button><div class="key" data-key="K">K</div></button>
-             <button><div class="key" data-key="L">L</div></button>
-              <button><div class="key" data-key=";">;</div></button>
-             </div>
-             <div class="row three">
-                <button><div class="key" data-key="Z">Z</div></button>
-                <button><div class="key" data-key="X">X</div></button>
-                <button><div class="key" data-key="C">C</div></button>
-                <button><div class="key" data-key="V">V</div></button>
-                <button><div class="key" data-key="B">B</div></button>
-                 <button><div class="key" data-key="N">N</div></button>
-                 <button><div class="key" data-key="M">M</div></button>
-                 <button><div class="key" data-key="SHFT">SHFT</div></button>
-                 <button><div class="key" data-key=".">.</div></button>
-                  <button><div class="key" data-key="/">/</div></button>
-                 </div>
+            <button><div class="key" data-key="H">H</div></button>
+            <button><div class="key" data-key="J">J</div></button>
+            <button><div class="key" data-key="K">K</div></button>
+            <button><div class="key" data-key="L">L</div></button>
+           
+        </div>
+        <div class="row three">
+            <button><div class="key" data-key="Z">Z</div></button>
+            <button><div class="key" data-key="X">X</div></button>
+            <button><div class="key" data-key="C">C</div></button>
+            <button><div class="key" data-key="V">V</div></button>
+            <button><div class="key" data-key="B">B</div></button>
+            <button><div class="key" data-key="N">N</div></button>
+            <button><div class="key" data-key="M">M</div></button>
+            
+        </div>
     </div>
+
     <script>
         const keyboard = document.getElementById("keyboard");
         const keys = keyboard.querySelectorAll(".key");
 
-        document.addEventListener("keydown", (e) => {
-            const keyPressed = e.key.toUpperCase();
-            const audioElement = document.getElementById(`audio${keyPressed}`);
+        const touchSounds = {
+            "Q": "ringtone1.mp3",
+            "W": "ringtone2.mp3",
+            "E": "ringtone2.mp3",
+            "R": "ringtone2.mp3",
+            "T": "ringtone2.mp3",
+            "Y": "ringtone2.mp3",
+            "U": "ringtone2.mp3",
+            "I": "ringtone2.mp3",
+            "O": "ringtone2.mp3",
+            "P": "ringtone2.mp3",
+            "A": "ringtone2.mp3",
+            "S": "ringtone2.mp3",
+            "D": "ringtone2.mp3",
+            "F": "ringtone2.mp3",
+            "G": "ringtone2.mp3",
+            "H": "ringtone2.mp3",
+            "J": "ringtone2.mp3",
+            "K": "ringtone2.mp3",
+            "L": "ringtone2.mp3",
+            "Z": "ringtone2.mp3",
+            "X": "ringtone2.mp3",
+            "C": "ringtone2.mp3",
+            "V": "ringtone2.mp3",
+            "B": "ringtone2.mp3",
+            "N": "ringtone2.mp3",
+            "M": "ringtone2.mp3",            
+        };
 
-            if (audioElement) {
-                keys.forEach((key) => {
-                    const keyData = key.getAttribute("data-key");
-                    if (keyData === keyPressed) {
-                        key.classList.add("highlighted");
-                        audioElement.currentTime = 0;
-                        audioElement.play();
-                    }
-                });
+        function playTouchSound(key) {
+            const soundSrc = touchSounds[key];
+            if (soundSrc) {
+                const audioElement = new Audio(soundSrc);
+                audioElement.currentTime = 0;
+                audioElement.play();
             }
-        });
+        }
 
-        document.addEventListener('keyup', (e) => {
-            const keyPressed = e.key.toUpperCase();
-            const audioElement = document.getElementById(`audio${keyPressed}`);
-
+        function playKeySound(key) {
+            const audioElement = document.getElementById(`audio${key}`);
             if (audioElement) {
-                keys.forEach((key) => {
-                    const keyData = key.getAttribute('data-key');
-                    if (keyData === keyPressed) {
-                        key.classList.remove('highlighted');
-                    }
-                });
+                audioElement.currentTime = 0;
+                audioElement.play();
             }
+        }
+
+        keys.forEach((key) => {
+            const keyData = key.getAttribute("data-key");
+
+            key.addEventListener("touchstart", () => {
+                key.classList.add("highlighted");
+                playTouchSound(keyData);
+            });
+            key.addEventListener("touchend", () => {
+                key.classList.remove('highlighted');
+            });
+            key.addEventListener("touchcancel", () => {
+                key.classList.remove('highlighted');
+            });
+
+            document.addEventListener("keydown", (e) => {
+                const keyPressed = e.key.toUpperCase();
+                if (keyPressed === keyData) {
+                    key.classList.add("highlighted");
+                    playKeySound(keyData);
+                }
+            });
+
+            document.addEventListener("keyup", (e) => {
+                const keyPressed = e.key.toUpperCase();
+                if (keyPressed === keyData) {
+                    key.classList.remove("highlighted");
+                }
+            });
         });
     </script>
-    
 </body>
 </html>
