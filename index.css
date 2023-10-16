@@ -1,52 +1,62 @@
-body{
+body {
     background-color: rgb(252, 221, 221);
 }
-.keyboard{
-    margin:160px 0 0 200px;  
+
+.keyboard {
+    margin: 160px 0 0 200px;
 }
-.row{
- width: 100%;
- height:60px;
+
+.row {
+    width: 100%;
+    height: 60px;
 }
-.one,.two,.three,.four,.five{
-    margin:10px 0 0 0;
+
+.one, .two, .three, .four, .five {
+    margin: 10px 0 0 0;
 }
-button{
-    color:black;
-    width:55px;
-    height:55px;
-    border:none;
-    background:rgb(242, 237, 237);
-    box-shadow: 5px 5px 10px #100202,-5px -5px 10px #FFF;
-    font-size:20px;
-    margin-left: 20px;
-    outline:none;
-    font-family: arial,helvetica,sans-serif;
+
+button {
+    color: black;
+    width: 55px; 
+    height: 60px;
+    border:none; 
+    background: rgb(242, 237, 237);
+    box-shadow: 3px 3px 6px #100202, -3px -3px 6px #FFF;
+    font-size: 20px; 
+    margin-left: 20px; 
+    outline: none;
+    font-family: arial, helvetica, sans-serif;
     border-radius: 10%;
 }
-button:active{
-box-shadow: 5px 5px 10px #fdfdfd, 1px 1px 2px #c92c2c;
+
+button:active {
+    box-shadow: 5px 5px 10px #fdfdfd, 1px 1px 2px #c92c2c;
 }
-.back{
-    width:115px;
-    border-radius:10px;
+
+.back {
+    width: 115px; 
+    border-radius: 10px;
 }
-.tab{
-    width:85px;
-    border-radius:10px;
+
+.tab {
+    width: 70px; 
+    border-radius: 10px;
 }
-.capsLK{
-    width:85px;
-    border-radius:10px;
+
+.capsLK {
+    width: 85px; 
+    border-radius: 10px;
 }
+
 .keyboard button:hover {
     color: red;
 }
+
 .key {
-    width: 40px;
+    width: 40px; 
     height: 50px;
     text-align: center;
-    line-height: 50px;
+    line-height: 50px; 
     border: 1px solid #ccc;
     cursor: pointer;
 }
@@ -54,7 +64,28 @@ box-shadow: 5px 5px 10px #fdfdfd, 1px 1px 2px #c92c2c;
 .highlighted {
     background-color: rgb(225, 249, 6);
 }
-.img{
+
+.img {
     background-color: #c92c2c;
 }
-  
+
+@media (max-width: 600px) {
+    .keyboard {
+        max-width: 100%;
+        margin: 0;
+    }
+    .button {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+    .back, .tab, .capsLK {
+        width: 55px;
+    }
+    .key {
+        width: 30px;
+        height: 40px;
+        line-height: 40px;
+    }
+}
