@@ -87,24 +87,3 @@ button:hover {
 }
 
 
-@media screen and (max-width: 600px) {
-    body {
-        font-size: 100%;
-    }
-
-    .square {
-        width: 48%; 
-        padding-bottom: 48%; 
-        margin: 2%; 
-
-    h1 {
-    }
-
-    #message {
-        width: 40%; 
-    }
-
-    button {
-        font-size: 1rem;
-    }
-}
